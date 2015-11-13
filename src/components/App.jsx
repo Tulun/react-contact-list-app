@@ -1,7 +1,10 @@
 import React from 'react';
-import Textbox from './Textbox.jsx';
+import TextboxForm from './TextboxForm.jsx';
 import Row from './Row.jsx';
 import Col from './Col.jsx';
+import Button from './Button.jsx'
+global.jQuery = require('jquery');
+require('bootstrap')
  
 
 var App = React.createClass({
@@ -10,12 +13,12 @@ var App = React.createClass({
     return (
       <div className='container'>
         <Row>
-          <Col size={6}>
-            <h1>Todo List </h1>
+          <Col size={12}>
+            <h1> {"Jason's Todo List"} </h1>
           </Col>
-          <Col size={6}>
-            <Textbox/>
-          </Col>
+        </Row>
+        <Row>
+          <TextboxForm sizeColTextbox={11} sizeColButton={1} buttonName="Add Todo Item" />
         </Row>
       </div>
     )

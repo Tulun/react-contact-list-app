@@ -20,6 +20,8 @@ module.exports = {
         }
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, loader: 'url-loader?limit=100000' }
+
       // {
       //   test: /\.html$/,
       //   loader: "file?name=[name].[ext]",

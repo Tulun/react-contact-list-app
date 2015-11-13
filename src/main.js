@@ -2,8 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 global.jQuery = require('jquery');
-require('bootstrap')
-
+require('./css/bootstrap.css')
 // This package allows us to create URL routes
 import { Router, Route } from 'react-router';
 
