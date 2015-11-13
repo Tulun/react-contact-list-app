@@ -1,7 +1,6 @@
 // These two packages are required for React to work
 import React from 'react';
 import ReactDOM from 'react-dom';
-global.jQuery = require('jquery');
 require('./css/bootstrap.css')
 // This package allows us to create URL routes
 import { Router, Route } from 'react-router';

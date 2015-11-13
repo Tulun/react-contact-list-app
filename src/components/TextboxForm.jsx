@@ -4,14 +4,20 @@ import React from 'react';
 var TextboxForm = React.createClass({
 
   getInitialState: function() {
-    return {value: "Item Todo!"}
+    return {value: ''}
   },
 
-  handleChange: function(event) {
-    this.setState({value: event.target.value.substr(0,140)});
+  // handleChange: function(event) {
+  //   this.setState({value: event.target.value.substr(0,140)});
+  // },
+
+  handleChange: function(event){
+    this.setState({
+      value: event.target.value
+    })
   },
 
-  render : function () {    
+  render : function () {   
     var value = this.state.value;
     var sizeColTextbox = this.props.sizeColTextbox;
     var sizeColButton = this.props.sizeColButton;

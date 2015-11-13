@@ -1,6 +1,5 @@
 import React from 'react';
-global.jQuery = require('jquery');
-require('bootstrap')
+
 
 var Row = React.createClass({
 
