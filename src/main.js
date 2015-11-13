@@ -1,13 +1,21 @@
+// These two packages are required for React to work
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route } from 'react-router'
+global.jQuery = require('jquery');
+require('bootstrap')
+
+// This package allows us to create URL routes
+import { Router, Route } from 'react-router';
+
+// This package gets rid of ugly url bars
+import { createHistory } from 'history';
 
 
-import Hello from './components/hello.jsx';
+import App from './components/App.jsx';
 
 var routes = (
-  <Router >
-    <Route path="/" component={Hello} />
+  <Router history={createHistory()} >
+    <Route path="/" component={App} />
   </Router>
 )
 

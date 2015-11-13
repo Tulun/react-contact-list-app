@@ -3,9 +3,11 @@ var webpack = require('webpack');
  
 module.exports = {
 
-  entry: {
-    javascript: './src/main.js'
-  },
+  entry: [
+    'webpack/hot/dev-server',
+    'webpack-dev-server/client?http://localhost:8080',
+    './src/main.js'
+  ],
   output: { path: __dirname, filename: 'bundle.js' },
   module: {
     loaders: [
@@ -16,11 +18,15 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       // {
       //   test: /\.html$/,
       //   loader: "file?name=[name].[ext]",
       // }
     ]
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
