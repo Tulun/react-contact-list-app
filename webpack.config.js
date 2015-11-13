@@ -2,7 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
  
 module.exports = {
-  entry: './main.js',
+
+  entry: {
+    javascript: './src/main.js'
+  },
   output: { path: __dirname, filename: 'bundle.js' },
   module: {
     loaders: [
@@ -14,6 +17,10 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       }
+      // {
+      //   test: /\.html$/,
+      //   loader: "file?name=[name].[ext]",
+      // }
     ]
   },
 };
