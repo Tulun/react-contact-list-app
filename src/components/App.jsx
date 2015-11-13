@@ -15,14 +15,6 @@ var App = React.createClass({
       todos: ['Item 1', 'Item 2', 'Item 3']
     }
   },
-  handleChange: function (value) {
-    var value = event.target.value;
-    this.setState({
-      taskField: value
-    })
-    console.log(value)
-  },
-
   render : function () {
     var todos = this.state.todos
     return (
