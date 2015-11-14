@@ -3,7 +3,7 @@ import TextboxForm from './TextboxForm.jsx';
 import Row from './Row.jsx';
 import Col from './Col.jsx';
 import List from './List.jsx';
-import Button from './Button.jsx';
+// import Button from './Button.jsx';
 
  
 
@@ -11,8 +11,21 @@ var App = React.createClass({
 
   getInitialState(){
     return {
-      taskField: 'Boobs',
+      taskField: '',
       todos: ['Item 1', 'Item 2', 'Item 3']
+    }
+  },
+  handleChange: function(event){
+    this.setState({
+      taskField: event.target.value.substr(0,140)
+    })
+  },
+  createTodo: function() {
+    if (!(this.state.taskField === '')) {
+      this.setState({
+        todos: this.state.todos.concat(this.state.taskField),
+        taskField: ''
+      })
     }
   },
   render : function () {
@@ -26,7 +39,8 @@ var App = React.createClass({
         </Row>
         <Row>
           <TextboxForm sizeColTextbox={11} sizeColButton={1}
-           buttonName="Add Todo Item" value={this.state.taskField} />
+           buttonName="Add Todo Item" handleChange={this.handleChange} value={this.state.taskField}
+           createTodo={this.createTodo} />
         </Row>
         <Row>
           <Col size={12}>

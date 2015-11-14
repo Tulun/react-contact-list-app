@@ -3,32 +3,20 @@ import React from 'react';
 
 var TextboxForm = React.createClass({
 
-  getInitialState: function() {
-    return {value: ''}
-  },
-
-  // handleChange: function(event) {
-  //   this.setState({value: event.target.value.substr(0,140)});
-  // },
-
-  handleChange: function(event){
-    this.setState({
-      value: event.target.value
-    })
-  },
 
   render : function () {   
-    var value = this.state.value;
+    var value = this.props.value;
     var sizeColTextbox = this.props.sizeColTextbox;
     var sizeColButton = this.props.sizeColButton;
     var buttonName = this.props.buttonName;
+    console.log(value)
     return (
       <div className='form-group'>
         <div className={'col-md-' + sizeColTextbox}>
-          <input type="text" className='form-control' value={value} onChange={this.handleChange} onSubmit={this.createTodo}> </input>
+          <input type="text" className='form-control' value={value} onChange={this.props.handleChange}> </input>
         </div>
         <div className={'col-md-' + sizeColButton}>
-          <button className ='btn btn-default'> {buttonName} </button>
+          <button className ='btn btn-default' onClick={this.props.createTodo}> {buttonName} </button>
         </div>
       </div>
     )
